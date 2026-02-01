@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Will you be my Valentine?</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f6c1cc;
+  font-family: Arial, sans-serif;
+}
+
+.card {
+  background: #fff;
+  width: 420px;
+  padding: 40px 30px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  position: relative;
+}
+
+.face {
+  width: 90px;
+  height: 90px;
+  background: #f4b183;
+  border-radius: 50%;
+  margin: auto;
+  position: relative;
+}
+
+.face::before,
+.face::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 35px;
+}
+
+.face::before { left: 25px; }
+.face::after { right: 25px; }
+
+.mouth {
+  width: 10px;
+  height: 10px;
+  background: #ff4d6d;
+  border-radius: 50%;
+  margin: 55px auto 0;
+}
+
+.heart {
+  position: absolute;
+  right: -8px;
+  top: -6px;
+  font-size: 22px;
+}
+
+h2 {
+  margin-top: 20px;
+}
+
+.buttons {
+  margin-top: 30px;
+  height: 90px;
+  position: relative;
+}
+
+button {
+  padding: 10px 26px;
+  border-radius: 20px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.yes {
+  background: #ff4d6d;
+  color: white;
+}
+
+.no {
+  background: #eee;
+  position: absolute;
+  left: 200px;
+  top: 0;
+  z-index: 10;
+}
+
+.note {
+  margin-top: 20px;
+  font-size: 13px;
+  color: #555;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <div class="face">
+    <div class="heart">❤️</div>
+    <div class="mouth"></div>
+  </div>
+
+  <h2>Kanni, will you be my Valentine? 💘</h2>
+
+  <div class="buttons">
+    <button class="yes" id="yesBtn">Yes</button>
+    <button class="no" id="noBtn">No</button>
+  </div>
+
+  <div class="note">“No” seems a bit shy 😌</div>
+</div>
+
+<script>
+const noBtn = document.getElementById("noBtn");
+
+noBtn.addEventListener("mouseenter", () => {
+  const x = Math.random() * 260;
+  const y = Math.random() * 50;
+  noBtn.style.left = x + "px";
+  noBtn.style.top = y + "px";
+});
+
+document.getElementById("yesBtn").addEventListener("click", () => {
+  alert("YAYYY 💖 I knew you'd say YES 😍");
+});
+</script>
+
+</body>
+</html>
